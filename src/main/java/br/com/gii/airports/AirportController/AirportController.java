@@ -1,5 +1,6 @@
 package br.com.gii.airports.AirportController;
 
+import br.com.gii.airports.dto.AirportMinDTO;
 import br.com.gii.airports.entities.Airport;
 import br.com.gii.airports.services.AirportService;
 import java.util.List;
@@ -32,9 +33,9 @@ private AirportService airportService;
    * @param cityName
    * @return
    */
-  @GetMapping("/city/{cityName}")
-  public ResponseEntity<List<Airport>> findByCityIgnoreCase(@PathVariable String cityName) {
-      List<Airport> result = airportService.findByCity(cityName);
+  @GetMapping("/country/{countryName}")
+  public ResponseEntity<List<AirportMinDTO>> findByCountryIgnoreCase(@PathVariable String countryName) {
+      List<AirportMinDTO> result = airportService.findByCountry(countryName);
       
       
       if (result.isEmpty()) {

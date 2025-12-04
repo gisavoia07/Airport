@@ -47,7 +47,15 @@ public class AirportService {
                 .map(x -> new AirportMinDTO(x)).toList();
         return resultDTO;
     }
-    
+    /**
+     * Retornar DTO Airport por iataCode
+     * @param iataCode
+     * @return
+     */
+    public Airport findByIataCode(String iataCode){
+        Airport result = airportRepository.findByIataCode(iataCode);
+        return result;
+    }
     
     
 }
